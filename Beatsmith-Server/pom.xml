@@ -45,5 +45,13 @@
       </plugin>
     </plugins>
   </build>
+  
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/PRJ-Beatsmith/beatsmith-server</url>
+    </repository>
+  </distributionManagement>
 
 </project>
