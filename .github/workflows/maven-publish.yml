@@ -25,7 +25,7 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
     - name: Setup Maven Action
-      uses: s4u/setup-maven-action@1.10.0
+      uses: s4u/setup-maven-action@1.9.0
     - run: mvn -V ...
     - name: Test with Maven
       run: cd Beatsmith-Server && mvn verify
