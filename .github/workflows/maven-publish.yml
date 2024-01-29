@@ -24,6 +24,8 @@ jobs:
         distribution: 'temurin'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
+    - name: Install Tools
+      run: apt install mvn
     - name: Test with Maven
       run: cd Beatsmith-Server && mvn verify
     - name: Build with Maven
