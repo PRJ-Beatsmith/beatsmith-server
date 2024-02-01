@@ -15,6 +15,7 @@ public class User {
     private String email;
 
     private String fullname;
+    private String imageUrl;
 
     public String getFullname() {
         return fullname;
@@ -40,22 +41,26 @@ public class User {
         this.username = username;
     }
 
-    private String imageUrl;
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
+
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
+
     public String getImageUrl() {
         return imageUrl;
     }
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }

@@ -15,6 +15,11 @@ public class MavenReaderService {
     private final MavenXpp3Reader mavenXpp3Reader;
     private final Model model;
 
+    public MavenReaderService() throws XmlPullParserException, IOException {
+        this.mavenXpp3Reader = new MavenXpp3Reader();
+        this.model = parseMavenFile();
+    }
+
     private Model parseMavenFile() throws XmlPullParserException, IOException {
         final File localPomFile = new File(LOCAL_POM_FILE);
         if (localPomFile.exists()) {
@@ -31,11 +36,6 @@ public class MavenReaderService {
             final InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             return mavenXpp3Reader.read(inputStreamReader);
         }
-    }
-
-    public MavenReaderService() throws XmlPullParserException, IOException {
-        this.mavenXpp3Reader = new MavenXpp3Reader();
-        this.model = parseMavenFile();
     }
 
     public String getId() {

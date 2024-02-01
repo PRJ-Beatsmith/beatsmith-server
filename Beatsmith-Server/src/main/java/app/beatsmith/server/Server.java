@@ -11,15 +11,6 @@ public class Server {
 
     private static final Server server = new Server();
     private ConfigurableApplicationContext ctx;
-    public void start() {
-        String[] springArgs = {};
-        this.ctx = SpringApplication.run(Server.class, springArgs);
-    }
-
-    public void stop() {
-        ctx.stop();
-        this.ctx = null;
-    }
 
     /**
      * Verendung nicht erlaubt, da Singleton Pattern angewandt wurde.
@@ -29,5 +20,15 @@ public class Server {
 
     public static Server getInstance() {
         return server;
+    }
+
+    public void start() {
+        String[] springArgs = {};
+        this.ctx = SpringApplication.run(Server.class, springArgs);
+    }
+
+    public void stop() {
+        ctx.stop();
+        this.ctx = null;
     }
 }
