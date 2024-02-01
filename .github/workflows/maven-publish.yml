@@ -73,7 +73,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./target/Beatsmith.jar
+          asset_path: ./Beatsmith-Server/target/Beatsmith.jar
           asset_name: Beatsmith-${{ steps.create_release.outputs.release_name }}.jar
           asset_content_type: application/octet-stream
 
