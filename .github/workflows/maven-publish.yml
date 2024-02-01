@@ -54,7 +54,7 @@ jobs:
     steps:
       - name: Get the current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H%M%S')"
 
       - uses: actions/create-release@v1
         id: create_release
@@ -62,7 +62,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
           tag_name: release-${{ github.ref_name }}-${{ steps.date.outputs.date }}
-          release_name: release ${{ github.ref_name }}-${{ steps.date.outputs.date }}
+          release_name: Release ${{ github.ref_name }} - ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
 
