@@ -48,16 +48,20 @@ jobs:
     needs: [test, build]
     runs-on: self-hosted
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
+      - name: Get the current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
+
       - uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
           tag_name: ${{ github.ref_name }}
-          release_name: Release ${{ github.ref_name }} - $(date +'%Y-%m-%d %H:%M:%S')
+          release_name: Release ${{ github.ref_name }} - ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
 
