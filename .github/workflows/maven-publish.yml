@@ -76,15 +76,17 @@ jobs:
           asset_path: ./Beatsmith-Server/target/Beatsmith.jar
           asset_name: Beatsmith-${{ steps.create_release.outputs.release_name }}.jar
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-assets
-        uses: dwenegar/upload-release-assets@v1
+      - name: Upload Release Asset
+        id: upload-release-asset-openapi
+        uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
-          release_id: ${{ steps.create_release.outputs.id }}
-          assets_path: ./Beatsmith-Server/target/openapi.json
-
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Beatsmith-Server/target/openapi.json
+          asset_name: openapi-${{ steps.create_release.outputs.release_name }}.json
+          asset_content_type: application/octet-stream
+   
   # deploy:
   #   name: 🚀 Deploy
   #   needs: [test, build, release]
