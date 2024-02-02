@@ -11,7 +11,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EntityScan(basePackages = {"app.beatsmith"})
 public class Server {
 
+    /** Singleton Pattern **/
     private static final Server server = new Server();
+
+    /** Über dieses Objekt wird der Server zur Laufzeit bedient **/
     private ConfigurableApplicationContext ctx;
 
     /**

@@ -13,6 +13,8 @@ public class MavenReaderService {
     public static final String LOCAL_POM_FILE = "pom.xml";
     public static final String CLASSPATH_POM_FILE = "/META-INF/maven/app.beatsmith.server/Beatsmith-Server/pom.xml";
     private final MavenXpp3Reader mavenXpp3Reader;
+
+    /** Stellt die eingelesene Maven Konfiguration dar. */
     private final Model model;
 
     public MavenReaderService() throws XmlPullParserException, IOException {
@@ -20,6 +22,12 @@ public class MavenReaderService {
         this.model = parseMavenFile();
     }
 
+    /**
+     * Diese Methode versucht die zur Laufzeit angewandte Maven Konfiguration einzulesen.
+     * Dabei wird zuerst nach der lokal liegenden pom.xml Datei geschaut.
+     * Sollte diese nicht existieren wird die Datei aus dem Classpath der gebauten Jar gelesen.
+     * @return {@link Model}
+     */
     private Model parseMavenFile() throws XmlPullParserException, IOException {
         final File localPomFile = new File(LOCAL_POM_FILE);
         if (localPomFile.exists()) {
@@ -38,6 +46,10 @@ public class MavenReaderService {
         }
     }
 
+    /**
+     * Diese Methode gibt die <code>artifactId</code> der pom.xml aus.
+     * @return {@link String}
+     */
     public String getId() {
         if (model != null) {
             return model.getId();
@@ -45,6 +57,10 @@ public class MavenReaderService {
         return null;
     }
 
+    /**
+     * Diese Methode gibt die <code>version</code> der pom.xml aus.
+     * @return {@link String}
+     */
     public String getVersion() {
         if (model != null) {
             return model.getVersion();
