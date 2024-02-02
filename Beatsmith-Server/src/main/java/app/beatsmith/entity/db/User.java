@@ -1,29 +1,45 @@
 package app.beatsmith.entity.db;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "user_tbl")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid")
+    @Column(name = "id", updatable = false, nullable = false, unique = true)
+    private String id;
+
+    @Column(name = "description")
     private String description;
 
+    @Column(name = "username", unique = true, nullable = false)
     private String username;
+
+    @Column(name = "email", unique = true, nullable = false)
 
     private String email;
 
+    @Column(name = "fullname", nullable = false)
+
     private String fullname;
+
+    @Column(name = "imageUrl")
+
     private String imageUrl;
+
 
     public String getFullname() {
         return fullname;
     }
 
+
     public void setFullname(String fullname) {
         this.fullname = fullname;
     }
+
 
     public String getEmail() {
         return email;
@@ -33,9 +49,11 @@ public class User {
         this.email = email;
     }
 
+
     public String getUsername() {
         return username;
     }
+
 
     public void setUsername(String username) {
         this.username = username;
@@ -49,12 +67,8 @@ public class User {
         this.description = description;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getImageUrl() {

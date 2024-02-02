@@ -12,5 +12,7 @@ public class Beatsmith {
         LOG.error("TEST");
         Server server = Server.getInstance();
         server.start();
+
+
     }
 }
