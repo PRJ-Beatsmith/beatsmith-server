@@ -21,6 +21,11 @@ Die Softwareanforderungen für die Ausführung oder Entwicklung des Beatsmith-Se
 - **Apache Maven**
 - **Node.js** *(Optional für die Kompilierung der grafischen Benutzeroberfläche)*.
 
+## Ausführung
+Die Anwendung wird mittels Java gestartet und beansprucht anschließend den Port 8080.
+
+``` java -jar Beatsmith.jar ```
+
 ## Generieren der Dokumentation
 In dieser Sektion wird beschrieben, wie die API (Application Programming Interface)-Dokumentation und die Quellcode-Dokumentation erstellt werden können.
 
