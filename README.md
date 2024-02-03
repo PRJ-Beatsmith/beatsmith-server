@@ -8,6 +8,19 @@ Der Beatsmith-Server ist ein leistungsstarker Java-Application-Server, der auf d
 - **Grafische Benutzeroberfläche:** Bietet eine benutzerfreundliche Oberfläche für die Interaktion mit dem Beatsmith-Projekt.
 - **Weitere Funktionen:** und vieles mehr.
 
+## Inhaltsverzeichnis
+1. [Voraussetzungen](#voraussetzungen)
+   - [Ausführung](#ausführung)
+   - [Kompilieren der Anwendung](#kompilieren-der-anwendung)
+2. [Ausführung](#ausführung)
+2. [Generieren der Dokumentation](#generieren-der-dokumentation)
+   - [Voraussetzungen](#voraussetzungen-1)
+   - [Generieren der API-Dokumentation](#generieren-der-api-dokumentation)
+      - [Die Anwendung generiert die Dokumentation während der Laufzeit](#1-die-anwendung-generiert-die-dokumentation-während-der-laufzeit)
+      - [Die Dokumentation wird mittels Maven als openapi.json Datei erstellt](#2-die-dokumentation-wird-mittels-maven-als-openapijson-datei-erstellt)
+   - [Generierung der Quellcode-Dokumentation](#generierung-der-quellcode-dokumentation)
+   - [Kompilieren der Anwendung](#kompilieren-der-anwendung-1)
+
 ## Voraussetzungen
 Die Softwareanforderungen für die Ausführung oder Entwicklung des Beatsmith-Servers sind wie folgt.
 
