@@ -1,0 +1,3 @@
+[submodule "frontend/beatsmith-app"]
+	path = frontend/beatsmith-app
+	url = https://github.com/PRJ-Beatsmith/beatsmith-app
