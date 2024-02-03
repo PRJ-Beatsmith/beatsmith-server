@@ -1,0 +1,8 @@
+app.beatsmith
+app.beatsmith.entity.db
+app.beatsmith.entity.form
+app.beatsmith.server
+app.beatsmith.server.hooks
+app.beatsmith.server.routes
+app.beatsmith.server.routes.user
+app.beatsmith.servicer
