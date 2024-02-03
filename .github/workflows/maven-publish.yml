@@ -76,16 +76,7 @@ jobs:
           asset_path: ./Beatsmith-Server/target/Beatsmith.jar
           asset_name: Beatsmith-${{ steps.create_release.outputs.release_name }}.jar
           asset_content_type: application/octet-stream
-      - name: Upload Release Asset
-        id: upload-release-asset-openapi
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Beatsmith-Server/target/openapi.json
-          asset_name: openapi-${{ steps.create_release.outputs.release_name }}.json
-          asset_content_type: application/octet-stream
+
    
   # deploy:
   #   name: 🚀 Deploy
