@@ -1,8 +1,6 @@
 package app.beatsmith.server;
 
 import app.beatsmith.servicer.MavenReaderService;
-import app.beatsmith.servicer.UserService;
-import app.beatsmith.servicer.UserServiceImpl;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.springframework.context.annotation.Bean;
 
@@ -19,11 +17,6 @@ public class Configuration {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    @Bean
-    public UserService userService() {
-        return new UserServiceImpl();
     }
 
 }

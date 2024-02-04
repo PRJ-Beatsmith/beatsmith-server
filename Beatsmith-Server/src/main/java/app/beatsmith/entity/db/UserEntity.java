@@ -1,16 +1,14 @@
 package app.beatsmith.entity.db;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "user_tbl")
-public class User {
+public class UserEntity {
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid")
-    @Column(name = "id", updatable = false, nullable = false, unique = true)
-    private String id;
+    @GeneratedValue
+    @Column(name = "uuid", updatable = false, nullable = false, unique = true)
+    private Long id;
 
     @Column(name = "description")
     private String description;
@@ -67,7 +65,7 @@ public class User {
         this.description = description;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 

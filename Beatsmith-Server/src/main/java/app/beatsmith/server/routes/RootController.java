@@ -1,8 +1,7 @@
 package app.beatsmith.server.routes;
 
-import app.beatsmith.entity.db.User;
+import app.beatsmith.entity.db.UserEntity;
 import app.beatsmith.servicer.MavenReaderService;
-import app.beatsmith.servicer.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,19 +14,17 @@ public class RootController {
     @Autowired
     private MavenReaderService mavenReaderService;
 
-    @Autowired
-    private UserService userService;
 
     @GetMapping("/")
     public String getRoot() {
-        User user = new User();
-        user.setUsername("AAA");
-        user.setEmail("aaa");
-        user.setFullname("lll");
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUsername("AAA");
+        userEntity.setEmail("aaa");
+        userEntity.setFullname("lll");
 
 
         try {
-            userService.save(user);
+           // userRepository.save(user);
         } catch (Exception e) {
             int i = 0;
         }
