@@ -1,18 +1,71 @@
 package app.beatsmith;
 
 import app.beatsmith.server.Server;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 
 public class Beatsmith {
-    protected static final Logger LOG = LogManager.getLogger();
+
+    private static final Logger LOG = LoggerFactory.getLogger(Beatsmith.class);
 
     public static void main(String[] args) {
-        LOG.error("TEST");
-        Server server = Server.getInstance();
+        LOG.info("Beatsmith: Starting server");
+
+        final Server server = Server.getInstance();
         server.start();
 
+        LOG.info("Beatsmith: Started server");
 
+        serverRestartLoop(server);
+    }
+
+    private static void serverRestartLoop(Server server) {
+        LOG.info("Beatsmith: Waiting for Server to die");
+        boolean whileTrue = true;
+        while (whileTrue) {
+            try {
+                if (!server.isServerRunning()) {
+                    LOG.info("Beatsmith:  Server died. :(");
+                    LOG.info("Beatsmith: Restarting application. BYE.");
+                    restartApplication();
+                }
+            } catch (IOException ioException) {
+                whileTrue = false;
+                LOG.error("Beatsmith: Server finally died. Server will not automatically Restart.", ioException);
+            } catch (Exception e) {
+                LOG.error("Beatsmith: ", e);
+            }
+            try {
+                Thread.sleep(5000); // 5 Sekunden Pause
+            } catch (InterruptedException e) {
+                LOG.error("Beatsmith: ", e);
+            }
+        }
+    }
+
+    private static void restartApplication() throws IOException, URISyntaxException {
+        final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
+        final File currentJar = new File(Beatsmith.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+
+        /* is it a jar file? */
+        if (!currentJar.getName().endsWith(".jar")) {
+            return;
+        }
+
+        /* Build command: java -jar application.jar */
+        final ArrayList<String> command = new ArrayList<String>();
+        command.add(javaBin);
+        command.add("-jar");
+        command.add(currentJar.getPath());
+
+        final ProcessBuilder builder = new ProcessBuilder(command);
+        builder.start();
+        System.exit(0);
     }
 }

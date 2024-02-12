@@ -6,9 +6,26 @@
         </Console>
     </Appenders>
 
+    <appender name="FILE" class="org.apache.log4j.FileAppender">
+
+        <param name="file" value="${log}/log.out"/>
+        <param name="immediateFlush" value="true"/>
+        <param name="threshold" value="debug"/>
+        <param name="append" value="false"/>
+
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern" value="%m%n"/>
+        </layout>
+    </appender>
+
     <Loggers>
         <Root level="trace">
             <AppenderRef ref="console"/>
         </Root>
     </Loggers>
+
+    <logger name="log4j.rootLogger" additivity="false">
+        <level value="trace"/>
+        <appender-ref ref="FILE"/>
+    </logger>
 </Configuration>

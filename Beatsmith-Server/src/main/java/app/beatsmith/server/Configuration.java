@@ -12,9 +12,7 @@ public class Configuration {
     public MavenReaderService getMavenReaderService() {
         try {
             return new MavenReaderService();
-        } catch (XmlPullParserException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
