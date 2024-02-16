@@ -2,7 +2,6 @@ package app.beatsmith.entity.response.error;
 
 import app.beatsmith.entity.response.BaseResponse;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 
 public class ErrorResponse extends BaseResponse {
 

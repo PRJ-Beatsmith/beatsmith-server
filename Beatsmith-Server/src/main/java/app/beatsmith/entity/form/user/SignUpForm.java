@@ -26,13 +26,15 @@ public class SignUpForm {
     private String lastname;
 
     @NotNull
-    @DateTimeFormat(pattern="dd.MM.yyyy")
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date birthDate;
     private String imageUrl;
 
     @NotNull
     @ValidPassword
     private String password;
+    @NotNull
+    private boolean eulaAccepted;
 
     public String getPassword() {
         return password;
@@ -50,15 +52,12 @@ public class SignUpForm {
         this.eulaAccepted = eulaAccepted;
     }
 
-    @NotNull
-    private boolean eulaAccepted;
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
-        this.email = Sanitizer.cleanIt(email);;
+        this.email = Sanitizer.cleanIt(email);
     }
 
     public String getName() {

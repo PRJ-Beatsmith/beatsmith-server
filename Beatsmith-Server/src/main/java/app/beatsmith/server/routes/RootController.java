@@ -1,6 +1,5 @@
 package app.beatsmith.server.routes;
 
-import app.beatsmith.entity.db.UserEntity;
 import app.beatsmith.servicer.MavenReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

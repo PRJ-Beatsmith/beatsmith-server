@@ -12,18 +12,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class Server {
 
     /**
-     * <code>true</code> if Server alive.
-     * @return {@Boolean}
-     */
-    public boolean isServerRunning() {
-        return ctx.isRunning();
-    }
-
-    /**
      * Singleton Pattern
      **/
     private static final Server server = new Server();
-
     /**
      * Über dieses Objekt wird der Server zur Laufzeit bedient
      **/
@@ -37,6 +28,15 @@ public class Server {
 
     public static Server getInstance() {
         return server;
+    }
+
+    /**
+     * <code>true</code> if Server alive.
+     *
+     * @return {@Boolean}
+     */
+    public boolean isServerRunning() {
+        return ctx.isRunning();
     }
 
     public void start() {

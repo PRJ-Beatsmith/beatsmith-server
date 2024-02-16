@@ -13,14 +13,14 @@ public interface UserDAOService {
      * @param checkUsernameForm {@link CheckUsernameForm}
      * @return {@link Boolean}
      */
-    public boolean isUsernameAvailable(CheckUsernameForm checkUsernameForm);
+    boolean isUsernameAvailable(CheckUsernameForm checkUsernameForm);
 
     /**
      * Validiert und speichert eine {@link UserEntity} in die Datenbank ab.
      *
      * @param userEntity {@link UserEntity}
      */
-    public void saveUser(UserEntity userEntity);
+    void saveUser(UserEntity userEntity);
 
 
 }
