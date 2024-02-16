@@ -9,6 +9,7 @@ import app.beatsmith.entity.response.error.ErrorResponse;
 import app.beatsmith.entity.response.error.FormErrorResponse;
 import app.beatsmith.entity.response.success.OkResponse;
 import app.beatsmith.utils.DBDataTransformer;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,7 +41,7 @@ public class UserRootController {
     }
 
     @PostMapping(value = "/signup", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<BaseResponse> singUp(@Valid SignUpForm signUpForm, BindingResult bindingResult) {
+    public ResponseEntity<BaseResponse> singUp(@Valid SignUpForm signUpForm, BindingResult bindingResult, HttpServletRequest request) {
         try {
             if (bindingResult.hasErrors()) {
                 final FormErrorResponse formErrorResponse = new FormErrorResponse(bindingResult);

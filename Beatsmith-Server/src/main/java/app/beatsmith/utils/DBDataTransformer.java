@@ -8,7 +8,10 @@ public class DBDataTransformer {
         UserEntity userEntity = new UserEntity();
         userEntity.setUsername(signUpForm.getUsername());
         userEntity.setEmail(signUpForm.getEmail());
-        userEntity.setFullname(signUpForm.getFullname());
+        userEntity.setName(signUpForm.getName());
+        userEntity.setLastname(signUpForm.getLastname());
+        userEntity.setBirthdate(signUpForm.getBirthDate());
+        userEntity.setEulaAccepted(signUpForm.isEulaAccepted());
         userEntity.setImageUrl(signUpForm.getImageUrl());
         return userEntity;
     }

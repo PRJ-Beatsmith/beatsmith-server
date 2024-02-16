@@ -17,10 +17,6 @@ public class RootController {
 
     @GetMapping("/")
     public String getRoot() {
-        UserEntity userEntity = new UserEntity();
-        userEntity.setUsername("AAA");
-        userEntity.setEmail("aaa");
-        userEntity.setFullname("lll");
 
 
         try {
