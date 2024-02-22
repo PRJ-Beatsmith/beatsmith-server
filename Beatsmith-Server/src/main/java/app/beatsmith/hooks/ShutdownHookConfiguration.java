@@ -1,4 +1,4 @@
-package app.beatsmith.server.hooks;
+package app.beatsmith.hooks;
 
 import org.springframework.context.annotation.Configuration;
 

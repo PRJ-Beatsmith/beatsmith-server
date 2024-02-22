@@ -1,6 +1,6 @@
 package app.beatsmith;
 
-import app.beatsmith.server.Server;
+import app.beatsmith.server.SpringServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,20 +17,20 @@ public class Beatsmith {
     public static void main(String[] args) {
         LOG.info("Beatsmith: Starting server");
 
-        final Server server = Server.getInstance();
-        server.start();
+        final SpringServer springServer = SpringServer.getInstance();
+        springServer.start();
 
         LOG.info("Beatsmith: Started server");
 
-        serverRestartLoop(server);
+        serverRestartLoop(springServer);
     }
 
-    private static void serverRestartLoop(Server server) {
+    private static void serverRestartLoop(SpringServer springServer) {
         LOG.info("Beatsmith: Waiting for Server to die");
         boolean whileTrue = true;
         while (whileTrue) {
             try {
-                if (!server.isServerRunning()) {
+                if (!springServer.isServerRunning()) {
                     LOG.info("Beatsmith:  Server died. :(");
                     LOG.info("Beatsmith: Restarting application. BYE.");
                     restartApplication();

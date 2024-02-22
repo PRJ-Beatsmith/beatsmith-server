@@ -9,12 +9,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories("app.beatsmith.dao")
 @EntityScan("app.beatsmith")
-public class Server {
+public class SpringServer {
 
     /**
      * Singleton Pattern
      **/
-    private static final Server server = new Server();
+    private static final SpringServer SPRING_SERVER = new SpringServer();
     /**
      * Über dieses Objekt wird der Server zur Laufzeit bedient
      **/
@@ -23,11 +23,11 @@ public class Server {
     /**
      * Verendung nicht erlaubt, da Singleton Pattern angewandt wurde.
      */
-    public Server() {
+    public SpringServer() {
     }
 
-    public static Server getInstance() {
-        return server;
+    public static SpringServer getInstance() {
+        return SPRING_SERVER;
     }
 
     /**
@@ -41,7 +41,7 @@ public class Server {
 
     public void start() {
         String[] springArgs = {};
-        this.ctx = SpringApplication.run(Server.class, springArgs);
+        this.ctx = SpringApplication.run(SpringServer.class, springArgs);
     }
 
     public void stop() {

@@ -25,13 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
-public class UserRootController {
+public class UserRootController implements UserRoot{
     private static final Logger LOG = LoggerFactory.getLogger(UserRootController.class);
 
     @Autowired
     private UserDAOService userDAOService;
 
-    @PostMapping("/checkusername")
+    @Override
     public ResponseEntity<HttpStatus> usernameAvailable(CheckUsernameForm checkUsernameForm) {
         boolean isTaken = userDAOService.isUsernameAvailable(checkUsernameForm);
         if (isTaken) {
@@ -40,7 +40,7 @@ public class UserRootController {
         return new ResponseEntity<HttpStatus>(HttpStatus.OK);
     }
 
-    @PostMapping(value = "/signup", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @Override
     public ResponseEntity<BaseResponse> singUp(@Valid SignUpForm signUpForm, BindingResult bindingResult, HttpServletRequest request) {
         try {
             if (bindingResult.hasErrors()) {
