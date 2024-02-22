@@ -8,11 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImpl implements UserDAOService {
-    @Autowired
+public class UserDAOServiceImpl implements UserDAOService {
     private final UserDAO userDAO;
 
-    public UserServiceImpl(UserDAO userDAO) {
+    public UserDAOServiceImpl(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
 
