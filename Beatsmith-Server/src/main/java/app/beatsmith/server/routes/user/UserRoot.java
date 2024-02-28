@@ -4,6 +4,7 @@ import app.beatsmith.entity.form.user.CheckUsernameForm;
 import app.beatsmith.entity.form.user.SignUpForm;
 import app.beatsmith.entity.response.BaseResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,7 @@ public interface UserRoot {
 
     @PostMapping(value = "/signup", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ResponseStatus(code = HttpStatus.OK)
+    @RolesAllowed("user")
     public ResponseEntity<BaseResponse> singUp(@Valid SignUpForm signUpForm, BindingResult bindingResult, HttpServletRequest request);
 
 }

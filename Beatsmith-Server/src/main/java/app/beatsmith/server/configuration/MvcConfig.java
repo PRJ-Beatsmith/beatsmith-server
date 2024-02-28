@@ -1,4 +1,4 @@
-package app.beatsmith.server;
+package app.beatsmith.server.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -14,4 +14,6 @@ public class MvcConfig implements WebMvcConfigurer {
                 .addResourceHandler("/resources/**")
                 .addResourceLocations("/resources/");
     }
+
+
 }

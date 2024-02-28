@@ -1,4 +1,4 @@
-package app.beatsmith.server;
+package app.beatsmith.server.configuration;
 
 import app.beatsmith.dao.UserDAO;
 import app.beatsmith.dao.service.UserDAOService;
