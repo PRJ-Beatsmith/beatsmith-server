@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Beatsmith-Server.iml" filepath="$PROJECT_DIR$/Beatsmith-Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Build/Build.iml" filepath="$PROJECT_DIR$/../Build/Build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DataObjects/DataObjects.iml" filepath="$PROJECT_DIR$/../DataObjects/DataObjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Dokumentation/Dokumentation.iml" filepath="$PROJECT_DIR$/../Dokumentation/Dokumentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../frontend/frontend.iml" filepath="$PROJECT_DIR$/../frontend/frontend.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,6 @@
+spring:
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        password: qapcu5-qejfek-Nyxvuq
+        url: jdbc:mariadb://ddns.kyrillix.dev:50010/beatsmith
+        username: beatsmith-srv

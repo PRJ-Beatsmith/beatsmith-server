@@ -1,0 +1,19 @@
+info:
+    app:
+        name: '@project.artifactId@'
+        version: '@project.version@'
+spring:
+    jpa:
+        database: MYSQL
+        hibernate:
+            ddl-auto: create-drop
+        open-in-view: false
+    profiles:
+        active: dev
+    resources:
+        static-locations: classpath:/public/
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    jwk-set-uri: https://www.googleapis.com/service_accounts/v1/jwk/securetoken%40system.gserviceaccount.com

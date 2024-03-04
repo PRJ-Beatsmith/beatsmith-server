@@ -1,8 +1,10 @@
 package app.beatsmith;
 
 import app.beatsmith.server.SpringServer;
+import org.apache.logging.log4j.core.tools.picocli.CommandLine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.ansi.AnsiColor;
 
 import java.io.File;
 import java.io.IOException;
