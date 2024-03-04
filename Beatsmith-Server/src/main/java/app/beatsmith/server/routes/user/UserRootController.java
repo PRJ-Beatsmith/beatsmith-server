@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,12 +33,13 @@ public class UserRootController implements UserRoot{
     private UserDAOService userDAOService;
 
     @Override
+    @Secured("ROLE_ANONYMOUS")
     public ResponseEntity<HttpStatus> usernameAvailable(CheckUsernameForm checkUsernameForm) {
         boolean isTaken = userDAOService.isUsernameAvailable(checkUsernameForm);
         if (isTaken) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Override
