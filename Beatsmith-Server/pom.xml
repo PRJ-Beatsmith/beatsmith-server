@@ -203,7 +203,7 @@
                             <outputDirectory>${basedir}/src/main/resources/public</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${basedir}/../frontend/beatsmith-app/client/public</directory>
+                                    <directory>${basedir}/../frontend/beatsmith-app/client/Build</directory>
                                 </resource>
                             </resources>
                         </configuration>
@@ -258,5 +258,4 @@
             </releases>
         </repository>
     </repositories>
-
 </project>
