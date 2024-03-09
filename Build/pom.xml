@@ -23,5 +23,8 @@
 
     <modules>
         <module>../Beatsmith-Server</module>
+        <module>../DataObjects</module>
+        <module>../Dokumentation</module>
+        <module>../frontend</module>
     </modules>
 </project>
