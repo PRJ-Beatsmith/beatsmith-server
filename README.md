@@ -53,19 +53,19 @@ Es gibt zwei Methoden für die Generierung der API-Dokumentation.
 3. Navigiere zu folgender Domain, um eine OpenAPI-Dokumentation im JSON-Format abzurufen: http://localhost:8080/v3/api-docs
 
 #### 2. Die Dokumentation wird mittels Maven als openapi.json Datei erstellt.
-1. Klone das Repository: `git clone https://github.com/PRJ-Beatsmith/beatsmith-server`
+1. Klone das Repository: `git clone --recursive https://github.com/PRJ-Beatsmith/beatsmith-server`
 2. Navigiere in das Repository: `cd beatsmith-server`
 3. Kompiliere die Anwendung mit Maven: `mvn clean install`
 4. Die erstellte Datei befindet sich im Ordner /target: `beatsmith-server/target/openapi.json`
 
 ### Generierung der Quellcode-Dokumentation.
-1. Klone das Repository: `git clone https://github.com/PRJ-Beatsmith/beatsmith-server`
+1. Klone das Repository: `git clone --recursive https://github.com/PRJ-Beatsmith/beatsmith-server`
 2. Navigiere in das Repository: `cd beatsmith-server`
 3. Kompiliere die Anwendung mit Maven: `mvn javadoc:javadoc`
 4. Die erstellten Dateien sind im Ordner /docs zu finden.
 
 ### Kompilieren der Anwendung
-1. Klone das Repository: `git clone https://github.com/PRJ-Beatsmith/beatsmith-server`
+1. Klone das Repository: `git clone --recursive https://github.com/PRJ-Beatsmith/beatsmith-server`
 2. Navigiere in das Repository: `cd beatsmith-server`
 3. Kompiliere die Anwendung mit Maven: `mvn clean install`
 4. Die erstellten Dateien sind im Ordner /target zu finden: `beatsmith-server/target/Beatsmith.jar`
